@@ -12,15 +12,15 @@ export const useSettingsStore = defineStore(
       // 第二首 => yay
       { id: 2, name: 'yay', file: new URL('@/assets/yay.mp3', import.meta.url).href },
       // 第三首 => relax
-      { id: 3, name: 'relax', file: new URL('@/assets/relax.mp3', import.meta.url).href },
+      // { id: 3, name: 'relax', file: new URL('@/assets/relax.mp3', import.meta.url).href },
       // 第四首 => piano
-      { id: 4, name: 'piano', file: new URL('@/assets/piano.mp3', import.meta.url).href },
+      // { id: 4, name: 'piano', file: new URL('@/assets/piano.mp3', import.meta.url).href },
       // 第五首 => peaceful-piano
-      {
-        id: 5,
-        name: 'peaceful-piano',
-        file: new URL('@/assets/peaceful-piano.mp3', import.meta.url).href,
-      },
+      // {
+      //   id: 5,
+      //   name: 'peaceful-piano',
+      //   file: new URL('@/assets/peaceful-piano.mp3', import.meta.url).href,
+      // },
     ]
 
     const selected = ref(1)
