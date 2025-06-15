@@ -3,15 +3,16 @@
   <v-container>
     <v-row>
       <v-col cols="12">
-        <h1>目前事項</h1>
+        <h1 class="mb-2">目前事項</h1>
+        <hr />
         <!-- 目前待完成事項 -->
-        <h2>{{ list.currentItem }}</h2>
+        <h2 class="mt-5">待完成事項：{{ list.currentItem }}</h2>
 
         <!-- 事項剩餘時間 -->
         <h2>{{ list.timeleft }}</h2>
 
         <!-- 剩餘時間 -->
-        <h2>{{ timeLeftText }}</h2>
+        <h2>剩餘時間：{{ timeLeftText }}</h2>
 
         <!-- 改字體顏色
         color="white" => 白色
