@@ -11,6 +11,7 @@ import HomeView from '@/views/HomeView.vue'
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
+    // 首頁
     {
       path: '/',
       name: 'home',
@@ -19,6 +20,7 @@ const router = createRouter({
         title: '首頁',
       },
     },
+    // 事項
     {
       path: '/list',
       name: 'list',
@@ -27,6 +29,7 @@ const router = createRouter({
         title: '事項',
       },
     },
+    // 設定
     {
       path: '/settings',
       name: 'settings',
