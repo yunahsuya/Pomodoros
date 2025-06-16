@@ -22,6 +22,7 @@ export const useListStore = defineStore(
     // 是不是休息時間
     const isBreak = ref(false)
 
+    // 增加事項
     const addItem = value => {
       items.value.push({
         id: id.value++,
@@ -31,41 +32,49 @@ export const useListStore = defineStore(
       })
     }
 
+    // 編輯事項
     const editItem = id => {
       const i = items.value.findIndex(item => item.id === id)
       items[i].edit = true
     }
 
+    // 送出事項
     const submitEdit = id => {
       const i = items.value.findIndex(item => item.id === id)
       items[i].text = items[i].model
       items[i].edit = false
     }
 
+    // 取消編輯事項
     const cancelEdit = id => {
       const i = items.value.findIndex(item => item.id === id)
       items[i].model = items[i].text
       items[i].edit = false
     }
 
+    // 刪除事項
     const delItem = id => {
       const i = items.value.findIndex(item => item.id === id)
       items.value.splice(i, 1)
     }
 
+    // 刪除已完成事項
     const delFinishedItem = id => {
       const i = finishedItems.value.findIndex(item => item.id === id)
       finishedItems.value.splice(i, 1)
     }
 
+    //
     const setCurrentItem = () => {
       currentItem.value = isBreak.value ? '休息時間' : items.value.shift().text
     }
 
+    //
     const countdown = () => {
       timeleft.value--
     }
 
+    //
     const setFinishItem = () => {
       if (!isBreak.value) {
         finishedItems.value.push({
