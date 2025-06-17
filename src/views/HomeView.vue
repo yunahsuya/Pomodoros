@@ -3,12 +3,17 @@
   <v-container>
     <v-row>
       <v-col cols="12">
-        <!-- 目前事項 -->
-        <h1 class="mb-2">目前事項</h1>
+        <!-- 日期 -->
+        <h1>今天日期：{{ today }}</h1>
+
         <!-- 分隔線 -->
         <hr />
+
         <!-- 目前待完成事項 -->
-        <h2 class="mt-5">待完成事項：{{ list.currentItem }}</h2>
+        <h1 class="mt-5">待完成事項：{{ list.currentItem }}</h1>
+
+        <!-- 分隔線 -->
+        <hr />
 
         <!-- 事項剩餘時間 -->
         <h2>{{ list.timeleft }}</h2>
@@ -59,6 +64,14 @@ import DigitNumber from '@/components/DigitNumber.vue'
 import { useListStore } from '@/stores/list'
 import { useSettingsStore } from '@/stores/settings'
 
+// 日期
+const now = new Date()
+const today = now.toLocaleString('zh-TW', {
+  timeZone: 'Asia/Taipei',
+})
+console.log(today)
+
+//
 const list = useListStore()
 const settings = useSettingsStore()
 
