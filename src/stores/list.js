@@ -35,21 +35,21 @@ export const useListStore = defineStore(
     // 編輯事項
     const editItem = id => {
       const i = items.value.findIndex(item => item.id === id)
-      items[i].edit = true
+      items.value[i].edit = true
     }
 
     // 送出事項
     const submitEdit = id => {
       const i = items.value.findIndex(item => item.id === id)
-      items[i].text = items[i].model
-      items[i].edit = false
+      items.value[i].text = items.value[i].model
+      items.value[i].edit = false
     }
 
     // 取消編輯事項
     const cancelEdit = id => {
       const i = items.value.findIndex(item => item.id === id)
-      items[i].model = items[i].text
-      items[i].edit = false
+      items.value[i].model = items.value[i].text
+      items.value[i].edit = false
     }
 
     // 刪除事項
